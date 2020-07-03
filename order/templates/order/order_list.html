@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Order List</title>
+</head>
+<body class="container">
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>order</th>
+        <th>Modify</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for order in order_list %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ order }}</td>
+        <td>Modify</td>
+        <td>Delete</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
