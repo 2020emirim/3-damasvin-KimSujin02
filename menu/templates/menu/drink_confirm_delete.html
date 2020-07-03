@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
     <title>Drink Confrim Delete</title>
 </head>
-<body>
-
+<body class="container">
+    <h1>삭제하시겠습니까?</h1>
+    <h5>{{ drink }}</h5>
+    {% if drink.image != '' %}
+    <img src="{{ drink.image.url }}" alt="" style="height:200px" class="img-rounded mx-auto d-block">
+    {% endif %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+        <button type="button" class="btn btn-primary btn-sm" onclick="history.back(-1)">Cancle</button>
+    </form>
 </body>
 </html>

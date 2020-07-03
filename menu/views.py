@@ -12,15 +12,17 @@ class DrinkListView(ListView):
 
 class CoffeeCreateView(CreateView):
     model = Coffee
-    fields = '__all__'  #['category', 'name', 'price', 'image']
-    template_name = 'drink_create.html'
+    fields = ['name', 'price', 'image'] #'__all__'  #['category', 'name', 'price', 'image']
+    template_name = 'menu/drink_create.html'
     success_url = reverse_lazy('menu:list')
+    initial = {'category' : 'Coffee'}
 
 class BubbleteaCreateView(CreateView):
     model = Bubbletea
-    fields = '__all__'  #['category', 'name', 'price', 'image']
-    template_name = 'drink_create.html'
+    fields = ['name', 'price', 'image'] #'__all__'  #['category', 'name', 'price', 'image']
+    template_name = 'menu/drink_create.html'
     success_url = reverse_lazy('menu:list')
+    initial = {'category' : 'Bubbletea'}
 
 class DrinkUpdateView(UpdateView):
     model = Drink
