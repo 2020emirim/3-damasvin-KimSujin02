@@ -5,7 +5,7 @@ from menu.models import Drink
 class Order(models.Model):
     #drink(메뉴) stock(몇개) cup(크기) ice(얼음얼마나) suger(설탕얼마나) pearl(펄) price(가격)
     drink = models.ForeignKey(Drink, on_delete=models.CASCADE, related_name='order')
-    stock = models.CharField(default=1)
+    stock = models.IntegerField(default=1)
     cup = models.IntegerField() #0:레귤러 1:점보
     ice = models.IntegerField(default=100) #0, 50, 100, 150%
     suger = models.IntegerField(default=100) #0, 50, 100, 150%
